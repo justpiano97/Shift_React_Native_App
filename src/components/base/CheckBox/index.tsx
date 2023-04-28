@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Text, StyleSheet, Pressable } from 'react-native';
-import { Control, Controller, FieldValues, UseFormSetValue, useWatch } from 'react-hook-form';
 import CheckBox from '@react-native-community/checkbox';
+import { Control, Controller, FieldValues, UseFormSetValue, useWatch } from 'react-hook-form';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 
 import { primary, white } from '../../../utils/constants/color';
 
