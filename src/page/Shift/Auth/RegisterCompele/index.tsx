@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { useForm, FieldValues } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-// import Button from '../../../../components/_ui/Button';
-// import CheckBox from '../../../../components/_ui/Checkbox';
-// import Select from '../../../../components/_ui/Select';
 import { dark } from '../../../../utils/constants/color';
 import { ShiftRegistrationCompleteSchema } from '../../../../utils/schemas';
 import Button from '../../../../components/base/Button';
 import Select from '../../../../components/base/Select';
+import Checkbox from '../../../../components/base/CheckBox';
 
 const shiftExperienceList = [
   { label: 'Glass Collecting', name: 'glassCollecting' },
@@ -67,7 +65,6 @@ const ShiftRegisterComplete: React.FC = () => {
     const checkData = Object.keys(data)?.filter((item) => data[item] === true && item !== 'noExperience');
     requestData.sector = data.sector;
     requestData.experience = checkData;
-    console.log('requestData: ', requestData);
   };
 
   useEffect(() => {
@@ -89,6 +86,7 @@ const ShiftRegisterComplete: React.FC = () => {
       <View style={{ paddingHorizontal: 30 }}>
         <Text style={styles.text}>Select the type of work you are looking for and have experience of:</Text>
       </View>
+
       <View
         style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1, paddingTop: 20 }}
       >
@@ -103,9 +101,9 @@ const ShiftRegisterComplete: React.FC = () => {
         <View style={{ paddingVertical: 20 }}>
           <ScrollView style={{ height: '73%' }}>
             <View style={{ gap: 20, paddingHorizontal: 30 }}>
-              {/* {[...shiftExperienceList, { label: 'No Experience', name: 'noExperience' }]?.map((item) => (
-                <CheckBox key={item.name} control={control} name={item.name} label={item.label} />
-              ))} */}
+              {[...shiftExperienceList, { label: 'No Experience', name: 'noExperience' }]?.map((item) => (
+                <Checkbox key={item.name} control={control} name={item.name} label={item.label} />
+              ))}
             </View>
           </ScrollView>
         </View>

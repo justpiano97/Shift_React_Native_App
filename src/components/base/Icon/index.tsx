@@ -10,14 +10,16 @@ export type IconType = 'Menu' | 'User' | 'Upload' | 'ChevronUp' | 'ChevronDown';
 
 type Props = {
   name: IconType;
+  size?: number;
   color?: string;
-  size: number;
+  width?: string;
+  height?: string;
 };
 
-const Icon: React.FC<Props> = ({ name, color, size }) => {
+const Icon: React.FC<Props> = ({ name, color, size, height, width }) => {
   const icons = { Menu, User, Upload, ChevronDown, ChevronUp };
   const CurrentIcon = icons[name];
-  return <CurrentIcon height={size} width={size} color={color} />;
+  return <CurrentIcon height={height ?? size} width={width ?? size} color={color} />;
 };
 
 export default Icon;
