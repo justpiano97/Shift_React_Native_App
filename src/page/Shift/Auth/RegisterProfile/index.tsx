@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image, Platform } from 'react-native';
+import { ImagePickerResponse, launchImageLibrary } from 'react-native-image-picker';
 
 import Button from '../../../../components/base/Button';
 import Input from '../../../../components/base/Input';
@@ -16,12 +17,37 @@ type Props = {
 const ShiftRegisterProfile: React.FC<Props> = ({ navigation }) => {
   const { handleSubmit, control } = useForm();
 
-  const [image, setImage] = useState<string>();
+  const [image, setImage] = useState<ImagePickerResponse>();
 
-  const pickImage = async () => {};
+  const pickImage = async () => {
+    launchImageLibrary({ mediaType: 'photo' }, (response) => {
+      if (!response.didCancel) {
+        setImage(response);
+      }
+    });
+  };
+
+  const uploadImage = (photo: ImagePickerResponse) => {
+    const data = new FormData();
+    if (photo.assets) {
+      data.append('photo', {
+        name: photo.assets[0].fileName,
+        type: photo.assets[0].type,
+        uri: Platform.OS === 'ios' ? photo.assets[0].uri?.replace('file://', '') : photo.assets[0].uri,
+      });
+    }
+
+    return data;
+  };
 
   const onSubmit = (data: FieldValues) => {
-    console.log('data: ', data);
+    let requestData = new FormData();
+    if (image) {
+      requestData = uploadImage(image);
+    }
+    Object.keys(data).forEach((key) => {
+      requestData.append(key, data[key]);
+    });
     navigation.navigate(AppRouter.Main.Shift, { screen: AppRouter.Shift.Auth.RegisterComplete });
   };
   return (
@@ -29,8 +55,8 @@ const ShiftRegisterProfile: React.FC<Props> = ({ navigation }) => {
       <View style={styles.wrapper}>
         <View style={styles.uploadWrapper}>
           <TouchableOpacity style={styles.upload} onPress={() => pickImage()}>
-            {image ? (
-              <Image source={{ uri: image }} style={{ width: '100%', height: '100%' }} />
+            {image?.assets ? (
+              <Image source={{ uri: image.assets[0].uri }} style={{ width: '100%', height: '100%' }} />
             ) : (
               <View style={styles.uploadBtn}>
                 <Icon name="User" height={50} width={50} />
