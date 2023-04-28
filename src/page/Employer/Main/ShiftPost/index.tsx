@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useForm } from 'react-hook-form';
 
-import DateTimePickerModal from 'react-native-modal-datetime-picker';
 import Select from '../../../../components/base/Select';
 import Button from '../../../../components/base/Button';
 import { dark } from '../../../../utils/constants/color';
@@ -22,31 +21,13 @@ const DateList = [
 const ShitPost: React.FC = () => {
   const { control } = useForm();
 
-  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-
-  const showDatePicker = () => {
-    setDatePickerVisibility(true);
-  };
-
-  const hideDatePicker = () => {
-    setDatePickerVisibility(false);
-  };
-
-  const handleConfirm = (date: any) => {
-    console.warn('A date has been picked: ', date);
-    hideDatePicker();
-  };
+  const showDatePicker = () => {};
 
   return (
     <View style={styles.wrapper}>
       <Select control={control} name="team" list={TeamList} placeholder="Select who to post to" />
       <Select control={control} name="date" list={DateList} placeholder="Date of available shift" />
-      <DateTimePickerModal
-        isVisible={isDatePickerVisible}
-        mode="date"
-        onConfirm={handleConfirm}
-        onCancel={hideDatePicker}
-      />
+
       <Button onPress={showDatePicker}>Open Modal</Button>
     </View>
   );
