@@ -12,7 +12,7 @@ import { ShiftRegistrationSchema } from '../../../../utils/schemas';
 import { ShiftSeekerRegisterList } from '../../../../utils/constants/user';
 import { dark, white } from '../../../../utils/constants/color';
 
-const ShiftSeekerRegister: React.FC = () => {
+const ShiftRegister: React.FC = () => {
   const navigation = useNavigation<MainStackParamsList>();
 
   const {
@@ -62,4 +62,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ShiftSeekerRegister;
+export default ShiftRegister;

@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: dark,
-    paddingVertical: 50,
+    paddingBottom: 50,
+    paddingTop: 25,
     paddingHorizontal: 60,
     marginHorizontal: 'auto',
   },
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: white,
-    fontSize: 24,
+    fontSize: 22,
     textAlign: 'center',
   },
   buttonGroup: {

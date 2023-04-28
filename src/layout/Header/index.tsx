@@ -7,7 +7,8 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AppRouter } from '../../routers/config';
 import { MainStackParamsList } from '../../routers';
 import { dark, primary, red, white } from '../../utils/constants/color';
-import BarMeu from '../../assets/svgs/barMenu.svg';
+import BarMenu from '../../assets/svgs/barMenu.svg';
+import Icon from '../../components/base/Icon';
 
 const employerSignedMenu = [
   { label: 'Post a Shift', screen: AppRouter.Employer.Main.ShiftPost },
@@ -37,7 +38,7 @@ const Header: React.FC<Props> = ({ isEmployer = false }) => {
   const insets = useSafeAreaInsets();
 
   return (
-    <View style={[styles.wrapper, { paddingTop: insets.top }]}>
+    <View style={styles.wrapper}>
       <TouchableOpacity
         onPress={() => {
           navigation.navigate(AppRouter.Main.Home);
@@ -48,7 +49,7 @@ const Header: React.FC<Props> = ({ isEmployer = false }) => {
 
       <Menu>
         <MenuTrigger>
-          <BarMeu height={40} width={40} color={white} />
+          <Icon name="Menu" width={40} height={40} color={white} />
         </MenuTrigger>
         <MenuOptions customStyles={{ optionsWrapper: styles.optionsWrapper }}>
           {(isEmployer ? employerSignedMenu : shiftSignedMenu)?.map((item) => (
