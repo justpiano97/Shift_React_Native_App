@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
 
-import { dark, white } from '../../utils/constants/color';
 import Button from '../../components/base/Button';
 import { AppRouter } from '../../routers/config';
+import { dark, white } from '../../utils/constants/color';
 
 type Props = {
   navigation: any;
