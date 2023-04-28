@@ -1,11 +1,15 @@
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+import { Text } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { MenuProvider } from 'react-native-popup-menu';
 
 function App(): JSX.Element {
   return (
-    <SafeAreaView>
-      <Text>AAA</Text>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <MenuProvider>
+        <Text>AAA</Text>
+      </MenuProvider>
+    </SafeAreaProvider>
   );
 }
 
