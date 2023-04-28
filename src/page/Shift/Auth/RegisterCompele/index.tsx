@@ -102,7 +102,7 @@ const ShiftRegisterComplete: React.FC = () => {
           <ScrollView style={{ height: '73%' }}>
             <View style={{ gap: 20, paddingHorizontal: 30 }}>
               {[...shiftExperienceList, { label: 'No Experience', name: 'noExperience' }]?.map((item) => (
-                <Checkbox key={item.name} control={control} name={item.name} label={item.label} />
+                <Checkbox setValue={setValue} key={item.name} control={control} name={item.name} label={item.label} />
               ))}
             </View>
           </ScrollView>

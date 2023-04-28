@@ -1,18 +1,24 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { Control, Controller, FieldValues } from 'react-hook-form';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
+import { Control, Controller, FieldValues, UseFormSetValue, useWatch } from 'react-hook-form';
+import CheckBox from '@react-native-community/checkbox';
 
 import { primary, white } from '../../../utils/constants/color';
-import CheckBox from '@react-native-community/checkbox';
 
 type Props = {
   control: Control<FieldValues, any>;
+  setValue: UseFormSetValue<FieldValues>;
   name: string;
   styles?: any;
   label: string;
 };
 
-const Checkbox: React.FC<Props> = ({ control, name, label }) => {
+const Checkbox: React.FC<Props> = ({ control, name, label, setValue }) => {
+  const current = useWatch({
+    control,
+    name: name,
+  });
+
   return (
     <View key={name} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
       <Controller
@@ -22,7 +28,9 @@ const Checkbox: React.FC<Props> = ({ control, name, label }) => {
           <CheckBox tintColors={{ true: primary, false: primary }} value={value} onValueChange={onChange} />
         )}
       />
-      <Text style={styles.checkText}>{label}</Text>
+      <Pressable onPress={() => setValue(name, !current)}>
+        <Text style={styles.checkText}>{label}</Text>
+      </Pressable>
     </View>
   );
 };
