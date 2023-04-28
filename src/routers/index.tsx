@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import EmployerRouter from './employerRouter';
 import Home from '../page/Home';
 import ShiftRouter from './shiftRouter';
 import { AppRouter } from './config';
@@ -26,6 +27,7 @@ const Router: React.FC = () => {
         >
           <MainStack.Screen name={AppRouter.Main.Home} component={Home} />
           <MainStack.Screen name={AppRouter.Main.Shift} component={ShiftRouter} />
+          <MainStack.Screen name={AppRouter.Main.Employer} component={EmployerRouter} />
         </MainStack.Navigator>
       </NavigationContainer>
     </View>
