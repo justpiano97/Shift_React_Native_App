@@ -4,14 +4,14 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import Button from '../../../components/base/Button';
-import Input from '../../../components/base/Input';
-import Select from '../../../components/base/Select';
-import { AppRouter } from '../../../routers/config';
-import { EmployerRegisterList } from '../../../utils/constants/user';
-import { EmployerRegistrationSchema } from '../../../utils/schemas';
-import { MainStackParamsList } from '../../../routers';
-import { white } from '../../../utils/constants/color';
+import Button from '../../../../components/base/Button';
+import Input from '../../../../components/base/Input';
+import Select from '../../../../components/base/Select';
+import { AppRouter } from '../../../../routers/config';
+import { EmployerRegisterList } from '../../../../utils/constants/user';
+import { EmployerRegistrationSchema } from '../../../../utils/schemas';
+import { MainStackParamsList } from '../../../../routers';
+import { white } from '../../../../utils/constants/color';
 
 const sectorList = [
   { label: 'Hospital', value: 'hospital' },
