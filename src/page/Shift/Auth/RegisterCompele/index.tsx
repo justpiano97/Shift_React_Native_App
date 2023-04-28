@@ -23,19 +23,6 @@ const shiftExperienceList = [
   { label: 'Barista6', name: 'barista6' },
 ];
 
-export const sectorList = [
-  { label: 'Hospital', value: 'hospital' },
-  { label: 'Retail', value: 'retail' },
-  { label: 'Hair and Beauty', value: 'hair_and_beauty' },
-  { label: 'Construction', value: 'construction' },
-  { label: 'Agriculture', value: 'agriculture' },
-  { label: 'Film Production', value: 'film_production' },
-  { label: 'Theatre and Cinema', value: 'theatre_and_cinema' },
-  { label: 'Courier & Shipping', value: 'courier_shipping' },
-  { label: 'Nursing and Care', value: 'Nursing_and_care' },
-  { label: 'Other', value: 'other' },
-];
-
 const dataArray = [
   'glassCollecting',
   'waitingStaff',
@@ -48,6 +35,19 @@ const dataArray = [
   'barista3',
   'barista4',
   'barista5',
+];
+
+const sectorList = [
+  { label: 'Hospital', value: 'hospital' },
+  { label: 'Retail', value: 'retail' },
+  { label: 'Hair and Beauty', value: 'hair_and_beauty' },
+  { label: 'Construction', value: 'construction' },
+  { label: 'Agriculture', value: 'agriculture' },
+  { label: 'Film Production', value: 'film_production' },
+  { label: 'Theatre and Cinema', value: 'theatre_and_cinema' },
+  { label: 'Courier & Shipping', value: 'courier_shipping' },
+  { label: 'Nursing and Care', value: 'Nursing_and_care' },
+  { label: 'Other', value: 'other' },
 ];
 
 const ShiftRegisterComplete: React.FC = () => {
