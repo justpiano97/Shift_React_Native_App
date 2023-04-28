@@ -2,13 +2,11 @@ import React from 'react';
 import { Menu, MenuOptions, MenuTrigger } from 'react-native-popup-menu';
 import { View, Image, StyleSheet, TouchableOpacity, Text, Pressable } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
+import Icon from '../../components/base/Icon';
 import { AppRouter } from '../../routers/config';
 import { MainStackParamsList } from '../../routers';
 import { dark, primary, red, white } from '../../utils/constants/color';
-import BarMenu from '../../assets/svgs/barMenu.svg';
-import Icon from '../../components/base/Icon';
 
 const employerSignedMenu = [
   { label: 'Post a Shift', screen: AppRouter.Employer.Main.ShiftPost },
@@ -35,7 +33,6 @@ type Props = {
 
 const Header: React.FC<Props> = ({ isEmployer = false }) => {
   const navigation = useNavigation<MainStackParamsList>();
-  const insets = useSafeAreaInsets();
 
   return (
     <View style={styles.wrapper}>
@@ -49,7 +46,7 @@ const Header: React.FC<Props> = ({ isEmployer = false }) => {
 
       <Menu>
         <MenuTrigger>
-          <Icon name="Menu" width={40} height={40} color={white} />
+          <Icon name="Menu" size={40} color={white} />
         </MenuTrigger>
         <MenuOptions customStyles={{ optionsWrapper: styles.optionsWrapper }}>
           {(isEmployer ? employerSignedMenu : shiftSignedMenu)?.map((item) => (

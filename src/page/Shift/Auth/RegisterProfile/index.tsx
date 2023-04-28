@@ -59,7 +59,7 @@ const ShiftRegisterProfile: React.FC<Props> = ({ navigation }) => {
               <Image source={{ uri: image.assets[0].uri }} style={{ width: '100%', height: '100%' }} />
             ) : (
               <View style={styles.uploadBtn}>
-                <Icon name="User" height={50} width={50} />
+                <Icon name="User" size={50} />
                 <Text style={{ fontSize: 16, textAlign: 'center' }}>Upload Headshot</Text>
               </View>
             )}
@@ -73,7 +73,7 @@ const ShiftRegisterProfile: React.FC<Props> = ({ navigation }) => {
         <View style={styles.uploadWrapper}>
           <View style={styles.upload}>
             <View style={styles.uploadBtn}>
-              <Icon name="Upload" height={50} width={50} />
+              <Icon name="Upload" size={50} />
               <Text style={{ fontSize: 16, textAlign: 'center' }}>Upload ID Passport or Visa</Text>
             </View>
           </View>

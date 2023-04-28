@@ -9,7 +9,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { dark } from '../../../../utils/constants/color';
 import { ShiftRegistrationCompleteSchema } from '../../../../utils/schemas';
 import Button from '../../../../components/base/Button';
-// import { sectorList } from '../../../../utils/constants/users';
+import Select from '../../../../components/base/Select';
 
 const shiftExperienceList = [
   { label: 'Glass Collecting', name: 'glassCollecting' },
@@ -23,6 +23,19 @@ const shiftExperienceList = [
   { label: 'Barista4', name: 'barista4' },
   { label: 'Barista5', name: 'barista5' },
   { label: 'Barista6', name: 'barista6' },
+];
+
+export const sectorList = [
+  { label: 'Hospital', value: 'hospital' },
+  { label: 'Retail', value: 'retail' },
+  { label: 'Hair and Beauty', value: 'hair_and_beauty' },
+  { label: 'Construction', value: 'construction' },
+  { label: 'Agriculture', value: 'agriculture' },
+  { label: 'Film Production', value: 'film_production' },
+  { label: 'Theatre and Cinema', value: 'theatre_and_cinema' },
+  { label: 'Courier & Shipping', value: 'courier_shipping' },
+  { label: 'Nursing and Care', value: 'Nursing_and_care' },
+  { label: 'Other', value: 'other' },
 ];
 
 const dataArray = [
@@ -79,14 +92,14 @@ const ShiftRegisterComplete: React.FC = () => {
       <View
         style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1, paddingTop: 20 }}
       >
-        {/* <Select
+        <Select
           styles={{ paddingHorizontal: 30 }}
           control={control}
           list={sectorList}
           name="sector"
           error={errors.sector}
           placeholder="Choose your Sector"
-        /> */}
+        />
         <View style={{ paddingVertical: 20 }}>
           <ScrollView style={{ height: '73%' }}>
             <View style={{ gap: 20, paddingHorizontal: 30 }}>
