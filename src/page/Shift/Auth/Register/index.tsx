@@ -4,8 +4,8 @@ import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-// import Input from '../../../../components/_ui/Input';
 import Button from '../../../../components/base/Button';
+import Input from '../../../../components/base/Input';
 import { AppRouter } from '../../../../routers/config';
 import { MainStackParamsList } from '../../../../routers';
 import { ShiftRegistrationSchema } from '../../../../utils/schemas';
@@ -30,7 +30,7 @@ const ShiftSeekerRegister: React.FC = () => {
       <Text style={styles.title}>ShiftSeeker Registration</Text>
       <ScrollView style={{ paddingHorizontal: 30 }}>
         <View style={styles.inputWrapper}>
-          {/* {ShiftSeekerRegisterList?.map((item) => (
+          {ShiftSeekerRegisterList?.map((item) => (
             <Input
               key={item?.label}
               placeholder={item.label}
@@ -38,7 +38,7 @@ const ShiftSeekerRegister: React.FC = () => {
               name={item.name}
               error={errors[item.name]}
             />
-          ))} */}
+          ))}
         </View>
         <Button onPress={handleSubmit(onSubmit)}>Continue</Button>
       </ScrollView>

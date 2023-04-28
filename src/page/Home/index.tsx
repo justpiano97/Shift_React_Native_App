@@ -13,7 +13,11 @@ const Home: React.FC<Props> = ({ navigation }) => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.logoWrapper}>
-        <Image source={require('../../assets/images/logo.png')} style={{ width: '100%', height: 135 }} />
+        <Image
+          source={require('../../assets/images/logo.png')}
+          style={{ width: 220, height: 110 }}
+          resizeMode="stretch"
+        />
       </View>
       <Text style={styles.text}>Find Shift work to suit your lifestyle</Text>
       <View style={styles.buttonGroup}>
