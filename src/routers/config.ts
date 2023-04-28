@@ -24,4 +24,4 @@ const Employer = {
   },
 };
 
-export const ScreenRouter = { Main, Shift, Employer };
+export const AppRouter = { Main, Shift, Employer };
