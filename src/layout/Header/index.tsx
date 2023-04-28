@@ -7,6 +7,7 @@ import Icon from '../../components/base/Icon';
 import { AppRouter } from '../../routers/config';
 import { MainStackParamsList } from '../../routers';
 import { dark, primary, red, white } from '../../utils/constants/color';
+import Avatar from '../../components/base/Avatar';
 
 const employerSignedMenu = [
   { label: 'Post a Shift', screen: AppRouter.Employer.Main.ShiftPost },
@@ -65,9 +66,14 @@ const Header: React.FC<Props> = ({ isEmployer = false }) => {
               ]}
             >
               <View style={styles.optionWrapper}>
-                {item.label === 'My Profile' && true && (
-                  <Image source={require('../../assets/images/avatar.png')} style={{ width: '100%', height: '100%' }} />
-                )}
+                {item.label === 'My Profile' &&
+                  true &&
+                  (<Avatar isEmployer={isEmployer} /> ?? (
+                    <Image
+                      source={require('../../assets/images/avatar.png')}
+                      style={{ width: '100%', height: '100%' }}
+                    />
+                  ))}
                 {item.label === 'View Shift List' && false && (
                   <View style={{ width: 18, height: 18, backgroundColor: red, borderRadius: 100, marginLeft: 5 }} />
                 )}
