@@ -11,9 +11,9 @@ type Props = {
 
 const MainLayout: React.FC<Props> = ({ children, isEmployer }) => {
   return (
-    <View style={{ height: '100%' }}>
+    <View style={{ height: '100%', paddingVertical: 40, backgroundColor: dark }}>
       <Header isEmployer={isEmployer} />
-      <View style={{ flex: 1, backgroundColor: dark, paddingBottom: 40 }}>{children}</View>
+      <View style={{ flex: 1 }}>{children}</View>
     </View>
   );
 };

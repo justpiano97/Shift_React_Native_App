@@ -6,7 +6,7 @@ const Main = {
 
 const Shift = {
   Auth: {
-    RegisterBase: 'ShiftSeeker_Register_Base',
+    Register: 'ShiftSeeker_Register_Base',
     RegisterProfile: 'ShiftSeeker_Register_Profile',
     RegisterComplete: 'ShiftSeeker_Register_Complete',
   },
@@ -14,7 +14,7 @@ const Shift = {
 
 const Employer = {
   Auth: {
-    RegisterBase: 'Employer_Register_Base',
+    Register: 'Employer_Register_Base',
     Terms: 'Terms',
   },
   Main: {

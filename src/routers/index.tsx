@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from '../page/Home';
+import ShiftRouter from './shiftRouter';
 import { AppRouter } from './config';
 import { dark } from '../utils/constants/color';
 
@@ -24,6 +25,7 @@ const Router: React.FC = () => {
           }}
         >
           <MainStack.Screen name={AppRouter.Main.Home} component={Home} />
+          <MainStack.Screen name={AppRouter.Main.Shift} component={ShiftRouter} />
         </MainStack.Navigator>
       </NavigationContainer>
     </View>
