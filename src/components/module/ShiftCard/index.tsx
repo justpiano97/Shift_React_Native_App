@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Pressable, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import StarRating from 'react-native-star-rating-widget';
 
 import { AppRouter } from '../../../routers/config';
 import { MainStackParamsList } from '../../../routers';
@@ -12,6 +13,7 @@ type Props = {
 
 const ShiftCard: React.FC<Props> = ({ index = 0 }) => {
   const navigation = useNavigation<MainStackParamsList>();
+  const [rating, setRating] = useState(0);
 
   return (
     <View style={{ backgroundColor: 'white', borderWidth: 2, borderColor: primary, borderRadius: 8 }}>
@@ -36,10 +38,13 @@ const ShiftCard: React.FC<Props> = ({ index = 0 }) => {
           style={{ height: 80, width: 80, borderRadius: 100 }}
         />
         <View>
-          <Text style={{ fontSize: 20, color: dark }}>Mykhailo Romaniuk</Text>
+          <Text style={{ fontSize: 20, color: dark }}>{`Shift Seeker ${index + 1}`}</Text>
           <View style={{ display: 'flex', flexDirection: 'row' }}>
             <Text style={{ fontSize: 18, color: dark }}>Rating:</Text>
-            <Text style={{ fontSize: 18, color: dark }}> 5</Text>
+            <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+              <Text style={{ fontSize: 18, color: dark }} />
+              <StarRating rating={1.5} onChange={() => {}} starSize={24} color={primary} />
+            </View>
           </View>
           <Pressable
             onPress={() => {

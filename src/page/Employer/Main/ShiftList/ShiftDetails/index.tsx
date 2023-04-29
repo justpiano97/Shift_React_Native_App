@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { dark, primary } from '../../../../../utils/constants/color';
-// import ShiftDetailCard from '../../../../../components/_module/ShiftDetailCard';
+import ShiftDetailCard from '../../../../../components/module/ShiftDetailCard';
+import Icon from '../../../../../components/base/Icon';
 
 const ShiftDetail: React.FC = () => {
   const [currentCard, setCurrentCard] = useState(0);
@@ -17,7 +18,7 @@ const ShiftDetail: React.FC = () => {
             }
           }}
         >
-          {/* <Entypo name="chevron-left" color={primary} size={30} /> */}
+          <Icon name="ChevronLeft" size={25} color={primary} />
           <Text style={styles.btnText}>Back</Text>
         </TouchableOpacity>
         <TouchableOpacity
@@ -29,14 +30,14 @@ const ShiftDetail: React.FC = () => {
           }}
         >
           <Text style={styles.btnText}>Next</Text>
-          {/* <Entypo name="chevron-right" color={primary} size={30} /> */}
+          <Icon name="ChevronRight" size={25} color={primary} />
         </TouchableOpacity>
       </View>
-      {/* {[...Array(3).keys()]
+      {[...Array(3).keys()]
         .filter((item, index) => index === currentCard)
         .map((item) => (
           <ShiftDetailCard key={item} index={item} />
-        ))} */}
+        ))}
     </View>
   );
 };
