@@ -6,7 +6,7 @@ import MainLayout from '../layout/MainLayout';
 import { AppRouter } from './config';
 import ShiftRegisterProfile from '../page/Shift/Auth/RegisterProfile';
 import ShiftRegister from '../page/Shift/Auth/Register';
-import ShiftRegisterComplete from '../page/Shift/Auth/RegisterCompele';
+import ShiftRegisterComplete from '../page/Shift/Auth/RegisterComplete';
 
 const ShiftStack = createNativeStackNavigator();
 
@@ -14,7 +14,7 @@ const ShiftRouter = () => {
   return (
     <MainLayout>
       <ShiftStack.Navigator
-        initialRouteName={AppRouter.Shift.Auth.RegisterProfile}
+        initialRouteName={AppRouter.Shift.Auth.Register}
         screenOptions={{
           headerShown: false,
         }}
