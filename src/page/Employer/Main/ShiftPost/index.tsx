@@ -3,10 +3,11 @@ import { View, StyleSheet } from 'react-native';
 import { useForm } from 'react-hook-form';
 import { SelectList, MultipleSelectList } from 'react-native-dropdown-select-list';
 
-import Select from '../../../../components/base/Select';
+import Select from '../../../../components/base/Select-aa';
 import Button from '../../../../components/base/Button';
 import { dark, primary, white } from '../../../../utils/constants/color';
 import Icon from '../../../../components/base/Icon';
+import MultiSelect from '../../../../components/base/MultiSelect';
 
 const TeamList = [
   { label: 'Restaurant Team', value: 'restaurantTeam' },
@@ -38,22 +39,7 @@ const ShitPost: React.FC = () => {
     <View style={styles.wrapper}>
       <Select control={control} name="team" list={TeamList} placeholder="Select who to post to" />
       <Select control={control} name="date" list={DateList} placeholder="Date of available shift" />
-      <MultipleSelectList
-        setSelected={(val: any) => setSelected(val)}
-        data={data}
-        save="value"
-        placeholder="Select who to  post to"
-        boxStyles={{ borderRadius: 8, backgroundColor: white, borderColor: primary, borderWidth: 2 }}
-        inputStyles={{ fontSize: 16, textAlign: 'center', color: dark }}
-        dropdownStyles={{ backgroundColor: white, borderColor: primary, borderWidth: 2 }}
-        dropdownTextStyles={{ fontSize: 16 }}
-        arrowicon={<Icon name="ChevronDown" size={24} color={primary} />}
-        searchicon={<Icon name="Search" size={22} color={primary} />}
-        closeicon={<Icon name="Close" size={22} color={primary} />}
-        badgeStyles={{ backgroundColor: primary }}
-        checkBoxStyles={{ backgroundColor: white, borderColor: primary, width: 20, height: 20 }}
-        badgeTextStyles={{}}
-      />
+      <MultiSelect />
       <Button>Open Modal</Button>
     </View>
   );

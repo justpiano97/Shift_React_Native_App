@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { dark } from '../../../../utils/constants/color';
 import { ShiftRegistrationCompleteSchema } from '../../../../utils/schemas';
 import Button from '../../../../components/base/Button';
-import Select from '../../../../components/base/Select';
+import Select from '../../../../components/base/Select-aa';
 import Checkbox from '../../../../components/base/CheckBox';
 
 const shiftExperienceList = [

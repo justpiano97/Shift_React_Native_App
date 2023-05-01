@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 import Button from '../../../../components/base/Button';
 import Input from '../../../../components/base/Input';
-import Select from '../../../../components/base/Select';
+import Select from '../../../../components/base/Select-aa';
 import { AppRouter } from '../../../../routers/config';
 import { EmployerRegisterList } from '../../../../utils/constants/user';
 import { EmployerRegistrationSchema } from '../../../../utils/schemas';
